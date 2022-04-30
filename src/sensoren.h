@@ -16,7 +16,10 @@ public:
     ~Sensoren();
 
     void begin(String bezeichnung, int port);
+    // Starten des Sensors mit korrekten Daten (Portzuweisung, Bezeichnung des Sensors)
     void abfrage(double_t wert);
+    // Abfrage des Sensors für seinen Wert
+    // Bereitstellen der Daten aus dem Sensor für die Übertragung an MQTT
 };
 
 #endif
