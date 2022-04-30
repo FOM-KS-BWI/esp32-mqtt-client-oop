@@ -19,11 +19,4 @@ public:
     void begin(String mqttServer);
 };
 
-Firmware::Firmware(/* args */){
-}
-
-Firmware::~Firmware(){
-}
-
-
 #endif
