@@ -12,7 +12,7 @@ public:
     Text(/* args */);
     ~Text();
     void setText(String eingabe);
+    String getText();
 };
-
 
 #endif
