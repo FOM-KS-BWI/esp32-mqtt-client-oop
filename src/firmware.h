@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <MQTT.h>
 #include <WiFi.h>
+#include "sensoren.h"
 
 class Firmware {
 private:
@@ -11,6 +12,7 @@ private:
     String mqttServer;
     String wifiName;
     MQTTClient mqttClient;
+    Sensoren sensoren;
 
 public:
     Firmware(/* args */);
