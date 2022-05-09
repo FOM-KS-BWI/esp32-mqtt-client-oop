@@ -5,6 +5,7 @@
 #include <MQTT.h>
 #include <WiFi.h>
 #include "sensoren.h"
+#include "text.h"
 
 class Firmware {
 private:
@@ -13,6 +14,7 @@ private:
     String wifiName;
     MQTTClient mqttClient;
     Sensoren sensoren;
+    Text text;
 
 public:
     Firmware(/* args */);
