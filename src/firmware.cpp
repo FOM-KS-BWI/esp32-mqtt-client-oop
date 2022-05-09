@@ -1,11 +1,6 @@
 #include "firmware.h"
 #include "wifi_credentials.h"
 
-<<<<<<< HEAD
-void Firmware::begin(String wifiName, String mqttServer) {
-this->wifiName
-
-=======
 Firmware::Firmware(/* args */){
 }
 
@@ -25,9 +20,6 @@ void Firmware::begin(String mqttServer) {
     mqttClient = new MQTTClient();
     mqttClient->begin("broker.hivemq.com", 1883, net);
     // Connect to MQTT broker
-<<<<<<< HEAD
->>>>>>> 71e590e4866e4203e0999e7be58049b7277e0d15
-=======
     while (!mqttClient->connect(CLIENT_ID, "public", "public")) {
         // Serial.print(".");
         delay(1000);
@@ -43,6 +35,5 @@ void Firmware::loop() {
 
 void Firmware::messageReceived(String &topic, String &payload) {
   Serial.println("incoming: " + topic + " - " + payload);
-  text.setText("incoming: " + topic + " - " + payload);
->>>>>>> a38ba3191baf6d5a115eae69c561e8228e91ea47
+  text.setText(payload);
 }

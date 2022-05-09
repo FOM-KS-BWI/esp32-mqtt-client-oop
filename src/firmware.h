@@ -1,25 +1,4 @@
 #ifndef FIRMWARE_H
-<<<<<<< HEAD
-#define FIRMWARE_H 
-
-#include <Arduino.h>
-#include <mqtt.h>
-#include <WiFi.h>
-
-class Firmware{
-    private:
-    ..../*data */
-    public: 
-    Firmware(/* args */);
-    ~Firmware(); 
-};
-
-Firmware::FIRMWARE(/* args */){
-}
-Firmware::FIRMWARE(){
-}
-
-=======
 #define FIRMWARE_H
 
 #include <Arduino.h>
@@ -49,4 +28,3 @@ public:
 };
 
 #endif
->>>>>>> 71e590e4866e4203e0999e7be58049b7277e0d15
