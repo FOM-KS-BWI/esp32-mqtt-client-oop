@@ -1,6 +1,8 @@
 #include <text.h>
+#include <heltec.h>
 
 Text::Text(/* args */) {
+    Heltec.display->clear();
 }
 
 Text::~Text() {
