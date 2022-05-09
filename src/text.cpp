@@ -1,5 +1,4 @@
 #include <text.h>
-#include <Arduino.h>
 
 Text::Text(/* args */) {
 }
