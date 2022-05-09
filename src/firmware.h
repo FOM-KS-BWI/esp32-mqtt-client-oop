@@ -45,6 +45,7 @@ public:
     ~Firmware();
 
     void begin(String mqttServer);
+    void loop();
 };
 
 #endif
