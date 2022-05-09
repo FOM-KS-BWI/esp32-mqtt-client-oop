@@ -26,6 +26,7 @@ void Firmware::begin(String mqttServer) {
     }
     text.setText("Connection established.");
     mqttClient->onMessage(std::bind(&Firmware::messageReceived, this, std::placeholders::_1, std::placeholders::_2));
+    mqttClient->subscribe("/BWIWS21KS");
 }
 
 void Firmware::messageReceived(String &topic, String &payload) {
