@@ -17,6 +17,7 @@ void Firmware::begin(String mqttServer) {
         delay(100); // 100ms warten...
     }
     text.setText("Connecting to MQTT");
+    mqttClient.begin("broker.hivemq.com", 1883, net);
     // Connect to MQTT broker
     while (!mqttClient.connect(CLIENT_ID, "public", "public")) {
         // Serial.print(".");

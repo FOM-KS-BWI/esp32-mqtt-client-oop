@@ -13,6 +13,7 @@ private:
     String mqttServer;
     String wifiName;
     MQTTClient mqttClient;
+    WiFiClient net;
     Sensoren sensoren;
     Text text;
 
