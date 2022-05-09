@@ -12,10 +12,12 @@ private:
     /* data */
     String mqttServer;
     String wifiName;
-    MQTTClient mqttClient;
+    MQTTClient *mqttClient;
     WiFiClient net;
     Sensoren sensoren;
     Text text;
+
+    void messageReceived(String &topic, String &payload);
 
 public:
     Firmware(/* args */);

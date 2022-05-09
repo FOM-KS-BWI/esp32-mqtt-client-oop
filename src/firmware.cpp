@@ -17,11 +17,18 @@ void Firmware::begin(String mqttServer) {
         delay(100); // 100ms warten...
     }
     text.setText("Connecting to MQTT");
-    mqttClient.begin("broker.hivemq.com", 1883, net);
+    mqttClient = new MQTTClient();
+    mqttClient->begin("broker.hivemq.com", 1883, net);
     // Connect to MQTT broker
-    while (!mqttClient.connect(CLIENT_ID, "public", "public")) {
+    while (!mqttClient->connect(CLIENT_ID, "public", "public")) {
         // Serial.print(".");
         delay(1000);
     }
     text.setText("Connection established.");
+    mqttClient->onMessage(std::bind(&Firmware::messageReceived, this, std::placeholders::_1, std::placeholders::_2));
+}
+
+void Firmware::messageReceived(String &topic, String &payload) {
+  Serial.println("incoming: " + topic + " - " + payload);
+  text.setText("incoming: " + topic + " - " + payload);
 }
