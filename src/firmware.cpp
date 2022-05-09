@@ -29,6 +29,10 @@ void Firmware::begin(String mqttServer) {
     mqttClient->subscribe("/BWIWS21KS");
 }
 
+void Firmware::loop() {
+    mqttClient->loop();
+}
+
 void Firmware::messageReceived(String &topic, String &payload) {
   Serial.println("incoming: " + topic + " - " + payload);
   text.setText("incoming: " + topic + " - " + payload);
