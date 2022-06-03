@@ -20,8 +20,7 @@ private:
     void messageReceived(String &topic, String &payload);
 
 public:
-    Firmware(/* args */);
-    ~Firmware();
+    Firmware();
 
     void begin(String parameterMqttServer);
     void loop();

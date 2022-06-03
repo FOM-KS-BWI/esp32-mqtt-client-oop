@@ -4,6 +4,7 @@
 #include "wifi_credentials.h"
 
 Firmware::Firmware(/* args */){
+    mqttClient = nullptr;
 }
 
 void Firmware::begin(String parameterMqttServer) {
@@ -14,7 +15,7 @@ void Firmware::begin(String parameterMqttServer) {
     this->mqttServer = std::move(parameterMqttServer);
     // Connect to WiFi
     WiFi.begin(WIFI_NAME, WIFI_PASS);
-    while (WiFi.status() != WL_CONNECTED) {
+    while (WiFiClass::status() != WL_CONNECTED) {
         delay(100); // 100ms warten...
     }
     text.setText("Connecting to MQTT");
