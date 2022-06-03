@@ -5,7 +5,7 @@
 #define BUTTON_PIN 0
 #define BUTTON_AKTIV (!digitalRead(BUTTON_PIN))
 
-Firmware firmware;
+Firmware firmware; // NOLINT(cert-err58-cpp)
 
 void setup() {
   Heltec.begin(true, false, true);
