@@ -20,7 +20,7 @@ void Firmware::begin(String mqttServer) {
     }
     text.setText("Connecting to MQTT");
     mqttClient = new MQTTClient();
-    mqttClient->begin("broker.hivemq.com", 1883, net);
+    mqttClient->begin(this->mqttServer.c_str(), 1883, net);
     // Connect to MQTT broker
     while (!mqttClient->connect(CLIENT_ID, "public", "public")) {
         // Serial.print(".");
