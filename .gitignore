@@ -5,3 +5,5 @@
 .vscode/ipch
 src/wifi_credentials.h
 /.vscode/
+/CMakeLists.txt
+/CMakeListsPrivate.txt
