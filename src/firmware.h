@@ -6,6 +6,7 @@
 #include <WiFi.h>
 #include "sensoren.h"
 #include "text.h"
+#include "LED.h"
 
 class Firmware {
 private:
@@ -16,6 +17,7 @@ private:
     WiFiClient net;
     Sensoren sensoren;
     Text text;
+    class LED led;
 
     void messageReceived(String &topic, String &payload);
 

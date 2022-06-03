@@ -8,7 +8,7 @@ Firmware::Firmware(/* args */){
 }
 
 void Firmware::begin(String parameterMqttServer) {
-    pinMode(LED_BUILTIN, OUTPUT);
+    led.begin(LED_BUILTIN);
 
     text.setText("Connecting WiFi");
     this->wifiName = WIFI_NAME;
@@ -40,10 +40,6 @@ void Firmware::messageReceived(String &topic, String &payload) {
   text.setText(payload);
   if (payload.startsWith("LED")) {
       // LED command
-      if (payload.substring(3).toInt() > 0) {
-          digitalWrite(LED_BUILTIN, 1);
-      } else {
-          digitalWrite(LED_BUILTIN, 0);
-      }
+      led.setHelligkeit(payload.substring(3).toInt());
   }
 }
