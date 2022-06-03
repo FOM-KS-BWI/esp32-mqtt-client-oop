@@ -23,7 +23,7 @@ public:
     Firmware(/* args */);
     ~Firmware();
 
-    void begin(String mqttServer);
+    void begin(String parameterMqttServer);
     void loop();
 };
 

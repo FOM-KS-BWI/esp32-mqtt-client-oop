@@ -1,18 +1,17 @@
 #include "firmware.h"
+
+#include <utility>
 #include "wifi_credentials.h"
 
 Firmware::Firmware(/* args */){
 }
 
-Firmware::~Firmware(){
-}
-
-void Firmware::begin(String mqttServer) {
+void Firmware::begin(String parameterMqttServer) {
     pinMode(LED_BUILTIN, OUTPUT);
 
     text.setText("Connecting WiFi");
     this->wifiName = WIFI_NAME;
-    this->mqttServer = mqttServer;
+    this->mqttServer = std::move(parameterMqttServer);
     // Connect to WiFi
     WiFi.begin(WIFI_NAME, WIFI_PASS);
     while (WiFi.status() != WL_CONNECTED) {
